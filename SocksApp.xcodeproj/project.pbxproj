@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		101000000000000000000001 /* SocksAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000001 /* SocksAppApp.swift */; };
+		101000000000000000000002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000002 /* AppDelegate.swift */; };
+		101000000000000000000003 /* SocksAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000003 /* SocksAppModel.swift */; };
+		101000000000000000000004 /* BackgroundAudioKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000004 /* BackgroundAudioKeeper.swift */; };
+		101000000000000000000005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000005 /* ContentView.swift */; };
+		101000000000000000000006 /* ByteFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000006 /* ByteFormatter.swift */; };
+		101000000000000000000007 /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000007 /* LogStore.swift */; };
+		101000000000000000000008 /* NetworkInterfaceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000008 /* NetworkInterfaceProvider.swift */; };
+		101000000000000000000009 /* SocksProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000009 /* SocksProtocol.swift */; };
+		10100000000000000000000A /* SocksServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200000000000000000000A /* SocksServer.swift */; };
+		10100000000000000000000B /* TrafficStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200000000000000000000B /* TrafficStats.swift */; };
+		10100000000000000000000C /* blank.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10200000000000000000000C /* blank.wav */; };
+		10100000000000000000000D /* SocksUDPDatagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200000000000000000000F /* SocksUDPDatagram.swift */; };
+		10100000000000000000000E /* SocksUDPRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000010 /* SocksUDPRelay.swift */; };
+		10100000000000000000000F /* SocksConnectionClosureReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000011 /* SocksConnectionClosureReason.swift */; };
+		101000000000000000000010 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000012 /* AppIcon.icon */; };
+		101000000000000000000011 /* SocksPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000013 /* SocksPort.swift */; };
+		101000000000000000000012 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000014 /* L10n.swift */; };
+		101000000000000000000013 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000015 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		102000000000000000000001 /* SocksAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksAppApp.swift; sourceTree = "<group>"; };
+		102000000000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		102000000000000000000003 /* SocksAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksAppModel.swift; sourceTree = "<group>"; };
+		102000000000000000000004 /* BackgroundAudioKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundAudioKeeper.swift; sourceTree = "<group>"; };
+		102000000000000000000005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		102000000000000000000006 /* ByteFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteFormatter.swift; sourceTree = "<group>"; };
+		102000000000000000000007 /* LogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
+		102000000000000000000008 /* NetworkInterfaceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterfaceProvider.swift; sourceTree = "<group>"; };
+		102000000000000000000009 /* SocksProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksProtocol.swift; sourceTree = "<group>"; };
+		10200000000000000000000A /* SocksServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksServer.swift; sourceTree = "<group>"; };
+		10200000000000000000000B /* TrafficStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficStats.swift; sourceTree = "<group>"; };
+		10200000000000000000000C /* blank.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blank.wav; sourceTree = "<group>"; };
+		10200000000000000000000D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10200000000000000000000E /* SocksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10200000000000000000000F /* SocksUDPDatagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksUDPDatagram.swift; sourceTree = "<group>"; };
+		102000000000000000000010 /* SocksUDPRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksUDPRelay.swift; sourceTree = "<group>"; };
+		102000000000000000000011 /* SocksConnectionClosureReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksConnectionClosureReason.swift; sourceTree = "<group>"; };
+		102000000000000000000012 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		102000000000000000000013 /* SocksPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksPort.swift; sourceTree = "<group>"; };
+		102000000000000000000014 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		102000000000000000000015 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		105000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		103000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				103000000000000000000002 /* SocksApp */,
+				103000000000000000000006 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		103000000000000000000002 /* SocksApp */ = {
+			isa = PBXGroup;
+			children = (
+				103000000000000000000003 /* App */,
+				103000000000000000000004 /* Sources */,
+				103000000000000000000005 /* Resources */,
+				102000000000000000000012 /* AppIcon.icon */,
+				10200000000000000000000D /* Info.plist */,
+			);
+			path = SocksApp;
+			sourceTree = "<group>";
+		};
+		103000000000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				102000000000000000000001 /* SocksAppApp.swift */,
+				102000000000000000000002 /* AppDelegate.swift */,
+				102000000000000000000003 /* SocksAppModel.swift */,
+				102000000000000000000004 /* BackgroundAudioKeeper.swift */,
+				102000000000000000000014 /* L10n.swift */,
+				102000000000000000000005 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		103000000000000000000004 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				103000000000000000000007 /* SocksCore */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		103000000000000000000005 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				102000000000000000000015 /* Localizable.xcstrings */,
+				10200000000000000000000C /* blank.wav */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		103000000000000000000006 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10200000000000000000000E /* SocksApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		103000000000000000000007 /* SocksCore */ = {
+			isa = PBXGroup;
+			children = (
+				102000000000000000000006 /* ByteFormatter.swift */,
+				102000000000000000000007 /* LogStore.swift */,
+				102000000000000000000008 /* NetworkInterfaceProvider.swift */,
+				102000000000000000000011 /* SocksConnectionClosureReason.swift */,
+				102000000000000000000013 /* SocksPort.swift */,
+				102000000000000000000009 /* SocksProtocol.swift */,
+				10200000000000000000000A /* SocksServer.swift */,
+				10200000000000000000000F /* SocksUDPDatagram.swift */,
+				102000000000000000000010 /* SocksUDPRelay.swift */,
+				10200000000000000000000B /* TrafficStats.swift */,
+			);
+			path = SocksCore;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		104000000000000000000001 /* SocksApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 108000000000000000000002 /* Build configuration list for PBXNativeTarget "SocksApp" */;
+			buildPhases = (
+				105000000000000000000001 /* Sources */,
+				105000000000000000000002 /* Frameworks */,
+				105000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocksApp;
+			productName = SocksApp;
+			productReference = 10200000000000000000000E /* SocksApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		106000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					104000000000000000000001 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 108000000000000000000001 /* Build configuration list for PBXProject "SocksApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				zh-Hans,
+				Base,
+			);
+			mainGroup = 103000000000000000000001;
+			productRefGroup = 103000000000000000000006 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				104000000000000000000001 /* SocksApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		105000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101000000000000000000013 /* Localizable.xcstrings in Resources */,
+				10100000000000000000000C /* blank.wav in Resources */,
+				101000000000000000000010 /* AppIcon.icon in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		105000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101000000000000000000001 /* SocksAppApp.swift in Sources */,
+				101000000000000000000002 /* AppDelegate.swift in Sources */,
+				101000000000000000000003 /* SocksAppModel.swift in Sources */,
+				101000000000000000000004 /* BackgroundAudioKeeper.swift in Sources */,
+				101000000000000000000012 /* L10n.swift in Sources */,
+				101000000000000000000005 /* ContentView.swift in Sources */,
+				101000000000000000000006 /* ByteFormatter.swift in Sources */,
+				101000000000000000000007 /* LogStore.swift in Sources */,
+				101000000000000000000008 /* NetworkInterfaceProvider.swift in Sources */,
+				10100000000000000000000F /* SocksConnectionClosureReason.swift in Sources */,
+				101000000000000000000011 /* SocksPort.swift in Sources */,
+				101000000000000000000009 /* SocksProtocol.swift in Sources */,
+				10100000000000000000000A /* SocksServer.swift in Sources */,
+				10100000000000000000000D /* SocksUDPDatagram.swift in Sources */,
+				10100000000000000000000E /* SocksUDPRelay.swift in Sources */,
+				10100000000000000000000B /* TrafficStats.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		107000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		107000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		107000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 97YS86UB59;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SocksApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.SocksApp;
+				PRODUCT_BUNDLE_PACKAGE_TYPE = APPL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		107000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 97YS86UB59;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SocksApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.SocksApp;
+				PRODUCT_BUNDLE_PACKAGE_TYPE = APPL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		108000000000000000000001 /* Build configuration list for PBXProject "SocksApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				107000000000000000000001 /* Debug */,
+				107000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		108000000000000000000002 /* Build configuration list for PBXNativeTarget "SocksApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				107000000000000000000003 /* Debug */,
+				107000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 106000000000000000000001 /* Project object */;
+}
