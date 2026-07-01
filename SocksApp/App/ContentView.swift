@@ -31,7 +31,7 @@ struct ContentView: View {
         .onAppear {
             model.startIfNeeded()
         }
-        .onChange(of: scenePhase) { _, phase in
+        .onChange(of: scenePhase) { phase in
             model.handleScenePhase(phase)
         }
         .alert(L10n.string("alert.no_network.title"), isPresented: $model.showsNoNetworkAlert) {
@@ -48,7 +48,7 @@ private struct HomeTab: View {
     @ObservedObject var model: SocksAppModel
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 VStack(spacing: 18) {
                     StatusCard(model: model)
@@ -65,6 +65,7 @@ private struct HomeTab: View {
             .navigationTitle(L10n.string("tab.home"))
             .navigationBarTitleDisplayMode(.large)
         }
+        .navigationViewStyle(.stack)
     }
 }
 
@@ -78,13 +79,13 @@ private struct StatusCard: View {
     var body: some View {
         CardContainer {
             VStack(spacing: 0) {
-                ViewThatFits(in: .horizontal) {
+                StatusHeroLayout {
                     HStack(alignment: .center, spacing: 18) {
                         powerButton(diameter: 124)
                         statusDetails
                             .frame(minWidth: 160, maxWidth: .infinity, alignment: .leading)
                     }
-
+                } compact: {
                     VStack(alignment: .leading, spacing: 16) {
                         HStack(alignment: .center, spacing: 16) {
                             powerButton(diameter: 96)
@@ -186,6 +187,32 @@ private struct StatusCard: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(isRunning ? L10n.string("accessibility.stop_proxy") : L10n.string("accessibility.start_proxy"))
+    }
+}
+
+private struct StatusHeroLayout<Regular: View, Compact: View>: View {
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    let regular: () -> Regular
+    let compact: () -> Compact
+
+    init(
+        @ViewBuilder regular: @escaping () -> Regular,
+        @ViewBuilder compact: @escaping () -> Compact
+    ) {
+        self.regular = regular
+        self.compact = compact
+    }
+
+    var body: some View {
+        Group {
+            if horizontalSizeClass == .regular {
+                regular()
+            } else {
+                compact()
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -333,11 +360,7 @@ private struct ProxyInfoCard: View {
                     Text(L10n.string("proxy.info.title"))
                         .font(.headline.weight(.bold))
                     Spacer()
-                    ShareLink(item: proxyText) {
-                        Label(L10n.string("common.share"), systemImage: "square.and.arrow.up")
-                    }
-                    .buttonStyle(.bordered)
-                    .controlSize(.small)
+                    ShareSheetButton(item: proxyText)
 
                     Button {
                         copy(proxyText)
@@ -414,6 +437,34 @@ private struct ProxyInfoCard: View {
             .padding(18)
         }
     }
+}
+
+private struct ShareSheetButton: View {
+    let item: String
+    @State private var isPresented = false
+
+    var body: some View {
+        Button {
+            isPresented = true
+        } label: {
+            Label(L10n.string("common.share"), systemImage: "square.and.arrow.up")
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.small)
+        .sheet(isPresented: $isPresented) {
+            ActivityView(activityItems: [item])
+        }
+    }
+}
+
+private struct ActivityView: UIViewControllerRepresentable {
+    let activityItems: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
 
 private struct LocalNetworkPrivacyCard: View {
@@ -563,7 +614,7 @@ private struct LogTab: View {
     @ObservedObject var model: SocksAppModel
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack(spacing: 16) {
                 StatusStrip(model: model)
                 logPanel
@@ -574,6 +625,7 @@ private struct LogTab: View {
             .navigationTitle(L10n.string("tab.logs"))
             .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(.stack)
     }
 
     private var logPanel: some View {
@@ -597,7 +649,7 @@ private struct LogTab: View {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .stroke(Color.white.opacity(0.18), lineWidth: 1)
             )
-            .onChange(of: model.logEntries) { _, entries in
+            .onChange(of: model.logEntries) { entries in
                 guard let last = entries.last else { return }
                 withAnimation(.easeOut(duration: 0.2)) {
                     proxy.scrollTo(last.id, anchor: .bottom)
@@ -662,7 +714,7 @@ private struct AboutTab: View {
     @ObservedObject var model: SocksAppModel
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
                     CardContainer {
@@ -727,6 +779,7 @@ private struct AboutTab: View {
             .navigationTitle(L10n.string("tab.about"))
             .navigationBarTitleDisplayMode(.large)
         }
+        .navigationViewStyle(.stack)
     }
 }
 

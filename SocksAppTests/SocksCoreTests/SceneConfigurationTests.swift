@@ -60,10 +60,13 @@ final class SceneConfigurationTests: XCTestCase {
             .appendingPathComponent("SocksApp/App/ContentView.swift")
         let source = try String(contentsOf: sourceURL)
 
-        XCTAssertTrue(source.contains("ViewThatFits(in: .horizontal)"))
+        XCTAssertTrue(source.contains("StatusHeroLayout"))
+        XCTAssertTrue(source.contains("@Environment(\\.horizontalSizeClass)"))
         XCTAssertTrue(source.contains("powerButton(diameter: 124)"))
         XCTAssertTrue(source.contains("frame(minWidth: 160"))
         XCTAssertTrue(source.contains("powerButton(diameter: 96)"))
+        XCTAssertFalse(source.contains("GeometryReader { geometry in"))
+        XCTAssertFalse(source.contains(".frame(minHeight: 154)"))
     }
 
     func testLogTabKeepsOnlyLogRegionScrollable() throws {
@@ -107,7 +110,7 @@ final class SceneConfigurationTests: XCTestCase {
         XCTAssertTrue(modelSource.contains("\"socks5://\\(proxyUsername):\\(proxyToken)@\\(host):\\(port)\""))
         XCTAssertTrue(modelSource.contains("\"socks5://\\(host):\\(port)\""))
         XCTAssertTrue(source.contains("QRCodeView(value: model.proxyURLString)"))
-        XCTAssertTrue(source.contains("ShareLink(item: proxyText)"))
+        XCTAssertTrue(source.contains("ShareSheetButton(item: proxyText)"))
         XCTAssertTrue(source.contains("copy(proxyText)"))
         XCTAssertFalse(source.contains("\"SOCKS5 \\(model.host):\\(model.port)\""))
     }
@@ -241,6 +244,21 @@ final class SceneConfigurationTests: XCTestCase {
         XCTAssertTrue(source.contains("portStatusMessage"))
         XCTAssertTrue(modelSource.contains("L10n.string(\"port.status.restart_after_save\")"))
         XCTAssertFalse(source.contains("开启 VPN"))
+    }
+
+    func testProjectBuildSettingsAndSwiftUIUseIOS15CompatibleAPIs() throws {
+        let rootURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+        let package = try String(contentsOf: rootURL.appendingPathComponent("Package.swift"))
+        let project = try String(contentsOf: rootURL.appendingPathComponent("SocksApp.xcodeproj/project.pbxproj"))
+        let contentView = try String(contentsOf: rootURL.appendingPathComponent("SocksApp/App/ContentView.swift"))
+
+        XCTAssertTrue(package.contains(".iOS(.v15)"))
+        XCTAssertTrue(project.contains("IPHONEOS_DEPLOYMENT_TARGET = 15.0;"))
+        XCTAssertFalse(contentView.contains("NavigationStack"))
+        XCTAssertFalse(contentView.contains("ViewThatFits"))
+        XCTAssertFalse(contentView.contains("ShareLink"))
+        XCTAssertFalse(contentView.contains(".onChange(of: scenePhase) { _, phase in"))
+        XCTAssertFalse(contentView.contains(".onChange(of: model.logEntries) { _, entries in"))
     }
 
     func testProjectUsesIconComposerAppIcon() throws {
